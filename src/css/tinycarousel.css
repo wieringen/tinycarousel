@@ -1,0 +1,278 @@
+/* slider1 */
+#slider1 {
+    margin: 0 0 20px;
+    overflow: hidden;
+}
+#slider1 .viewport {
+    float: left;
+    width: 368px;
+    height: 125px;
+    overflow: hidden;
+    position: relative;
+}
+#slider1 .buttons {
+    background: #C01313;
+    border-radius: 35px;
+    display: block;
+    margin: 30px 10px 0 0;
+    float: left;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 22px;
+}
+#slider1 .next {
+    margin: 30px 0 0 10px;
+}
+#slider1 .buttons:hover{
+    color: #C01313;
+    background: #fff;
+}
+#slider1 .disable {
+    visibility: hidden;
+}
+#slider1 .overview {
+    list-style: none;
+    position: absolute;
+    left: 0
+    top: 0;
+}
+#slider1 .overview li{
+    float: left;
+    margin: 0 20px 0 0;
+    overflow: hidden;
+    padding: 1px;
+    height: 121px;
+    border: 1px solid #dcdcdc;
+    width: 104px;
+}
+
+/* slider3 */
+#slider3 {
+    margin: 0 0 20px;
+}
+#slider3 .viewport {
+    width: 240px;
+    height: 125px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+#slider3 .bullets {
+    overflow:hidden;
+    list-style: none;
+    clear: both;
+    margin: 0 0 0 45px;
+}
+#slider3 .bullets li {
+    float: left;
+}
+#slider3 .bullet {
+    background-color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+#slider3 .bullet.active {
+    color: #fff;
+    background-color: #555555;
+}
+#slider3 .buttons {
+    background: #C01313;
+    border-radius: 35px;
+    display: block;
+    margin: 30px 10px 0 0;
+    float: left;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 22px;
+}
+#slider3 .next {
+    margin: 30px 0 0 10px;
+}
+#slider3 .buttons:hover{
+    color: #C01313;
+    background: #fff;
+}
+#slider3 .disable {
+    visibility: hidden;
+}
+#slider3 .overview {
+    list-style: none;
+    position: absolute;
+    width: 240px;
+    left: 0;
+    top: 0;
+}
+#slider3 .overview li {
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 1px;
+    height: 121px;
+    border: 1px solid #dcdcdc;
+    width: 236px;
+}
+
+/* slider4 */
+#slider4 {
+    margin: 0 0 20px;
+}
+#slider4 .viewport {
+    width: 458px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+#slider4 .bullets {
+    overflow:hidden;
+    height: 1%;
+    list-style: none;
+    clear: both;
+    margin: 0 0 10px;
+}
+#slider4 .bullets li {
+    float: left;
+}
+#slider4 .bullet {
+    background-color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+#slider4 .bullet.active {
+    color: #fff;
+    background-color: #555555;
+}
+#slider4 .overview {
+    list-style: none;
+    position: absolute;
+    left: 0
+    top: 0;
+}
+#slider4 .overview .page {
+    float: left;
+    padding: 5px;
+    height: 188px;
+    border: 1px solid #dcdcdc;
+    width: 446px;
+}
+
+/* slider5 */
+#slider5 { height: 1%; overflow:hidden; padding: 0 0 10px; margin: 0 0 0 50px;  }
+#slider5 .viewport { width: 240px; height: 125px; overflow: hidden; position: relative; }
+#slider5 .buttons {
+    background: #C01313;
+    border-radius: 35px;
+    display: block;
+    margin: 0 0 5px 0;
+    width: 70px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 14px;
+}
+#slider5 .next {
+    margin: 5px 0 0;
+}
+#slider5 .buttons:hover{
+    color: #C01313;
+    background: #fff;
+}
+#slider5 .overview {
+    list-style: none;
+    position: absolute;
+    width: 240px;
+    left: 0
+    top: 0;
+}
+#slider5 .overview li{
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 1px;
+    height: 121px;
+    border: 1px solid #dcdcdc;
+    width: 236px;
+}
+
+/* slider6 */
+#slider6 { height: 1%; overflow:hidden; padding: 0 0 10px; margin: 0 0 0 50px;  }
+#slider6 .viewport { float: left; width: 240px; height: 125px; overflow: hidden; position: relative; }
+#slider6 .buttons {
+    background: #C01313;
+    border-radius: 35px;
+    display: block;
+    margin: 30px 10px 0 0;
+    float: left;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 22px;
+}
+#slider6 .next {
+    margin: 5px 0 0 10px;
+}
+#slider6 .buttons:hover{
+    color: #C01313;
+    background: #fff;
+}
+#slider6 .disable { visibility: hidden; }
+#slider6 .overview { list-style: none; position: absolute; width: 240px; left: 0 top: 0; }
+#slider6 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
+
+/* slider7 */
+#slider7 { height: 1%; overflow:hidden; padding: 0 0 10px 0; }
+#slider7 .viewport { width: 240px; height: 125px; float: left; overflow: hidden; position: relative; }
+#slider7 .buttons {
+    background: #C01313;
+    border-radius: 35px;
+    display: block;
+    margin: 30px 10px 0 0;
+    float: left;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size: 22px;
+}
+#slider7 .next {
+    margin: 30px 0 0 10px;
+}
+#slider7 .buttons:hover{
+    color: #C01313;
+    background: #fff;
+}
+#slider7 .disable { visibility: hidden; }
+#slider7 .overview { list-style: none; position: absolute; width: 240px; left: 0 top: 0; }
+#slider7 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}

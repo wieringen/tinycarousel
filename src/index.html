@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Tiny Carousel: A lightweight jQuery based image slider.</title>
+
+        <meta charset="utf-8">
+        <meta name="robots" content="all" />
+        <meta name="resource-type" content="document" />
+        <meta name="description" content="Tiny Carousel is a lightweight jQuery based carousel for sliding html based content." />
+        <meta name="keywords" content="lightweight, jQuery, plugin, carousel, javascript, tinycarousel, Tiny Carousel, web 2.0" />
+        <meta name="author" content="Maarten baijs" />
+        <meta name="copyright" content="" />
+
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../node_modules/baijs/css/website.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="css/tinycarousel.css" type="text/css" media="screen"/>
+
+        <!--[if lte IE 8]>
+            <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+        <![endif]-->
+
+        <!--[if lte IE 7]>
+            <link rel="stylesheet" href="../node_modules/baijs/css/website_ie.css" type="text/css" media="screen"/>
+        <![endif]-->
+
+        <!--[if lte IE 5]>
+            <script type="text/javascript"> function handleError() { return true; } window.onerror = handleError; </script>
+        <![endif]-->
+
+        <!-- Add jQuery library -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- Add tinycarousel JS -->
+        <script type="text/javascript" src="js/jquery.tinycarousel.js"></script>
+
+        <!-- Next files are only for this website! -->
+        <script type="text/javascript" src="../node_modules/baijs/js/prettify.js"></script>
+        <script type="text/javascript" src="../node_modules/baijs/js/website.js"></script>
+
+    </head>
+
+    <body>
+
+    <!-- OPEN WRAPPER -->
+    <div id="wrapper">
+        <div id="wrapper-inner">
+
+            <!-- OPEN HEADER -->
+            <header id="header">
+                <h1>Tiny Carousel</h1>
+                <span class="slogan">A lightweight jQuery based image slider.</span>
+
+                <div class="block-download">
+                    <a href="tinycarousel-@@bnr@@.zip" onclick="pageTracker._trackEvent('Download', 'min', 'Tiny Carousel min download');" class="download">Download v@@bnr@@</a>
+                </div>
+            </header>
+            <!-- CLOSE HEADER -->
+
+            <!-- OPEN COLUMN MAIN -->
+            <section id="col-main">
+                <div class="col-content">
+
+                    <div class="block">
+                        <!-- google_ad_section_start -->
+                        <h2>What is it?</h2>
+                        <p>Tiny Carousel is a lightweight carousel for sliding html based content. It was built using the javascript jQuery library. Tiny Carousel was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface. </p>
+                        <!-- google_ad_section_end -->
+
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style ">
+                            <a class="addthis_button_facebook"></a>
+                            <a class="addthis_button_twitter"></a>
+                            <a class="addthis_button_delicious"></a>
+                        </div>
+                        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4ce416993f847623"></script>
+                        <!-- AddThis Button END -->
+                    </div>
+
+                    <div class="block">
+                        <h2>Features</h2>
+                        <ul class="list">
+                            <li>Can slide vertical or horizontal</li>
+                            <li>AMD, Node, requirejs and commonjs support.</li>
+                            <li>Supports navigation by button or paging</li>
+                            <li>The point where the carousel starts can be set</li>
+                            <li>Animation time can be set in milliseconds or to 'instant'</li>
+                            <li>Number of block to move at a time can be set</li>
+                            <li>A interval can be set to slide automaticaly every given milliseconds</li>
+                            <li>Easy customizable</li>
+                            <li>Lightweight</li>
+                        </ul>
+                    </div>
+
+                    <div class="block">
+                        <h2>Need support or custom features?</h2>
+                        <p>Anything is possible! For a small fee i can help you implement the script in your project. Missing any features? I can build them for you!! <span id="mcon"></span></p>
+                    </div>
+
+                    <h2>Examples</h2>
+                    <div id="slider1">
+                        <a class="buttons prev" href="#"><</a>
+                        <div class="viewport">
+                            <ul class="overview">
+                                <li><img src="images/picture1.jpg" alt="image 1" /></li>
+                                <li><img src="images/picture2.jpg" alt="image 2" /></li>
+                                <li><img src="images/picture3.jpg" alt="image 3" /></li>
+                                <li><img src="images/picture4.jpg" alt="image 4" /></li>
+                                <li><img src="images/picture7.jpg" alt="image 7" /></li>
+                            </ul>
+                        </div>
+                        <a class="buttons next" href="#">></a>
+
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                $('#slider1').tinycarousel();
+                            });
+                        </script>
+
+                    </div>
+
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    $('#slider1').tinycarousel();
+});
+                    </code></pre>
+
+                    <div class="block advert">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Responsive -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-6364750078473156"
+                             data-ad-slot="7734741654"
+                             data-ad-format="auto"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <div id="slider3">
+                        <a class="buttons prev" href="#"><</a>
+                        <div class="viewport">
+                            <ul class="overview">
+                                <li><img src="images/picture7.jpg" alt="image 7" /></li>
+                                <li><img src="images/picture5.jpg" alt="image 5" /></li>
+                                <li><img src="images/picture6.jpg" alt="image 6" /></li>
+                                <li><img src="images/picture4.jpg" alt="image 4" /></li>
+                                <li><img src="images/picture3.jpg" alt="image 3" /></li>
+                                <li><img src="images/picture2.jpg" alt="image 2" /></li>
+                            </ul>
+                        </div>
+                        <a class="buttons next" href="#">></a>
+                        <ul class="bullets">
+                            <li><a href="#" class="bullet active" data-slide="0">1</a></li>
+                            <li><a href="#" class="bullet" data-slide="1">2</a></li>
+                            <li><a href="#" class="bullet" data-slide="2">3</a></li>
+                            <li><a href="#" class="bullet" data-slide="3">4</a></li>
+                            <li><a href="#" class="bullet" data-slide="4">5</a></li>
+                            <li><a href="#" class="bullet" data-slide="5">6</a></li>
+                        </ul>
+
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                $("#slider3").tinycarousel({
+                                    bullets  : true
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    $("#slider3").tinycarousel({
+        bullets  : true
+    });
+});
+                    </code></pre>
+
+                    <div id="slider4">
+                        <ul class="bullets">
+                            <li><a href='#' class="bullet active" data-slide="0">Tyrion</a></li>
+                            <li><a href='#' class="bullet" data-slide="1">Daenerys</a></li>
+                            <li><a href='#' class="bullet" data-slide="2">Jon</a></li>
+                        </ul>
+                        <div class="viewport">
+                            <ul class="overview">
+                                <li class="page"><p>Nicknamed "The Imp", Tyrion Lannister is the younger brother of Cersei and Jaime Lannister. He is a dwarf; and his mother died during his birth, for which his father, Tywin Lannister, blames him. While not physically powerful, Tyrion has a cunning mind and often uses to his advantage the fact that others constantly underestimate him. Initially, Tyrion bears the Starks no ill will, but after being wrongly captured and put on trial for the crime of murdering Jon Arryn and conspiring to kill Bran Stark, both of which he had no hand in or knowledge of, his ire toward Lady Catelyn prompts him to join his father's war against the Starks.</p></li>
+                                <li class="page"><p>Daenerys Targaryen is the exiled princess of the Targaryen dynasty. Also called "the Stormborn", she and her brother Viserys were smuggled to Essos during the end of Robert's Rebellion. For seventeen years, she has been under Viserys' care whom she fears, as he is abusive to her whenever she displeases him. In exchange for an army, Viserys marries her to the powerful Dothraki warlord Khal Drogo, making her a Khaleesi, a queen of the Dothraki. Daenerys is at first afraid of her new husband but after learning the Dothraki language, she manages to get past their barriers.</p></li>
+                                <li class="page"><p>Jon Snow is the bastard son of Ned Stark who joins the Night's Watch. Jon is a talented fighter, but his sense of compassion and justice brings him into conflict with his harsh surroundings. Ned claims that Jon's mother was a wet nurse named Wylla. His direwolf is called Ghost due to his albinism and quiet nature. Jon soon learns that the Watch is no longer a glorious order, but is now composed mostly of society's rejects, including criminals and exiles. Initially, he has only contempt for his low-born brothers of the Watch, but he puts aside his prejudices and befriends his fellow recruits, especially Sam Tarly, after they unite against the cruel master-at-arms.</p></li>
+                            </ul>
+                        </div>
+
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                $("#slider4").tinycarousel({
+                                    bullets   : true
+                                ,   buttons   : false
+                                ,   animation : false
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    $("#slider4").tinycarousel({
+        bullets   : true
+    ,   buttons   : false
+    ,   animation : false
+    });
+});
+                    </code></pre>
+
+                    <div id="slider5">
+                        <a class="buttons prev" href="#">Up</a>
+                        <div class="viewport">
+                            <ul class="overview">
+                                <li><img src="images/picture3.jpg" alt="image 3" /></li>
+                                <li><img src="images/picture2.jpg" alt="image 2" /></li>
+                                <li><img src="images/picture1.jpg" alt="image 1" /></li>
+                            </ul>
+                        </div>
+                        <a class="buttons next" href="#">Down</a>
+
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                $("#slider5").tinycarousel({
+                                    axis   : "y"
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    $("#slider5").tinycarousel({
+        axis   : "y"
+    });
+});
+                    </code></pre>
+
+                    <div id="slider7">
+                        <a class="buttons prev" href="#"><</a>
+                        <div class="viewport">
+                            <ul class="overview">
+                                <li><img src="images/picture7.jpg" alt="image 7" /></li>
+                                <li><img src="images/picture5.jpg" alt="image 5" /></li>
+                                <li><img src="images/picture6.jpg" alt="image 6" /></li>
+                                <li><img src="images/picture4.jpg" alt="image 4" /></li>
+                                <li><img src="images/picture3.jpg" alt="image 3" /></li>
+                                <li><img src="images/picture2.jpg" alt="image 2" /></li>
+                            </ul>
+                        </div>
+                        <a class="buttons next" href="#">></a>
+
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                $("#slider7").tinycarousel({ interval: true });
+
+                                var slider7 = $("#slider7").data("plugin_tinycarousel");
+
+                                //The tinycarousel_move method you can use to make a anchor to a certain slide.
+                                $("#gotoslide4").click(function()
+                                {
+                                    slider7.move(4);
+
+                                    return false;
+                                });
+
+                                //The tinycarousel_start method starts the interval.
+                                $('#startslider').click(function()
+                                {
+                                    slider7.start();
+
+                                    return false;
+                                });
+
+                                //The tinycarousel_stop method stops the interval.
+                                $('#stopslider').click(function()
+                                {
+                                    slider7.stop();
+
+                                    return false;
+                                });
+                            });
+                        </script>
+
+                    </div>
+
+                    <p><a id="gotoslide4" href="#">Goto slide 4</a></p>
+                    <p><a id="stopslider" href="#">Stop autoplay</a></p>
+                    <p><a id="startslider" href="#">Start autoplay</a></p>
+
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    $("#slider7").tinycarousel({ interval: true });
+
+    var slider7 = $("#slider7").data("plugin_tinycarousel");
+
+    // The move method you can use to make a
+    // anchor to a certain slide.
+    //
+    $('#gotoslide4').click(function()
+    {
+        slider7.move(4);
+
+        return false;
+    });
+
+    // The start method starts the interval.
+    //
+    $('#startslider').click(function()
+    {
+        slider7.start();
+
+        return false;
+    });
+
+    // The stop method stops the interval.
+    //
+    $('#stopslider').click(function()
+    {
+        slider7.stop();
+
+        return false;
+    });
+});
+                    </code></pre>
+
+                  <div class="block advert">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Responsive -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-6364750078473156"
+                             data-ad-slot="7734741654"
+                             data-ad-format="auto"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <h2>Options</h2>
+                    <p>A list of all the available options and there default value</p>
+                    <ul class="list">
+                        <li><strong>start: 1</strong> -- where should the carousel start?</li>
+                        <li><strong>axis: 'x'</strong> -- vertical or horizontal scroller? 'x' or 'y' .</li>
+                        <li><strong>buttons: true</strong> -- show left and right navigation buttons?</li>
+                        <li><strong>bullets: false </strong> -- is there a page number navigation present?</li>
+                        <li><strong>interval: false</strong> -- move to the next block on interval.</li>
+                        <li><strong>intervalTime: 3000 </strong> -- interval time in milliseconds.</li>
+                        <li><strong>animation: true</strong> -- false is instant, true is animate.</li>
+                        <li><strong>animationTime: 1000</strong> -- how fast must the animation move in milliseconds?</li>
+                        <li><strong>onMove: null</strong> -- function that executes after every move </li>
+                    </ul>
+
+                    <p>Below is a example of a callback. After every move the function is executed and it will return 2 things the current li and its index.</p>
+                    <pre class="prettyprint"><code>
+$('#slider-code').tinycarousel({
+    onMove : function(element, index)
+    {
+        console.log(element, index);
+    }
+});
+                    </code></pre>
+
+                </div>
+            </section>
+            <!-- CLOSE COLUMN MAIN -->
+
+            <section id="col-right">
+                <ul class="block-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="../tinycarousel">Tiny Carousel</a></li>
+                    <li><a href="../tinyscrollbar">Tiny Scrollbar</a></li>
+                </ul>
+
+                <div class="block advert">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Responsive2 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6364750078473156"
+                         data-ad-slot="6807908455"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <div class="block">
+                    <h2>License / Source</h2>
+
+                    <p>Tinycarousel is a free script its licensed under the MIT license. However a donation for my labor of love is greatly appreciated :) </p>
+                    <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="beer">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
+                    </form></p>
+                    <p>The latest source is available on <a href="https://github.com/wieringen/tinycarousel">GitHub</a>.</p>
+                </div>
+
+            </section>
+
+            <footer class="footer">&copy; <a href="/">Maarten Baijs</a> 2009-2014</footer>
+        </div>
+    </div>
+    <!-- CLOSE WRAPPER -->
+
+
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-4459599-3");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+</body>
+</html>
