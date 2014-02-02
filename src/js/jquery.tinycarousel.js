@@ -93,7 +93,7 @@
                     return self.move(self.slideCurrent - 1);
                 });
 
-                $next.bind(eventType, (function()
+                $next.bind(eventType, function()
                 {
                     return self.move(self.slideCurrent + 1);
                 });
