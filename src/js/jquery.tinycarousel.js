@@ -82,18 +82,14 @@
 
         function setEvents()
         {
-            var touchEvents = "ontouchstart" in document.documentElement
-            ,   eventType   = touchEvents ? "touchstart" : "mousedown"
-            ;
-
             if(self.options.buttons)
             {
-                $prev.bind(eventType, function()
+                $prev.click(function()
                 {
                     return self.move(self.slideCurrent - 1);
                 });
 
-                $next.bind(eventType, function()
+                $next.click(function()
                 {
                     return self.move(self.slideCurrent + 1);
                 });
@@ -101,7 +97,7 @@
 
             if(self.options.bullets)
             {
-                $container.bind(eventType, ".bullet", function()
+                $container.on("click", ".bullet", function()
                 {
                     return self.move(+$(this).attr("data-slide"));
                 });
