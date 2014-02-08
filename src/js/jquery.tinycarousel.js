@@ -26,7 +26,6 @@
         ,   intervalTime:   3000   // interval time in milliseconds.
         ,   animation:      true   // false is instant, true is animate.
         ,   animationTime:  1000   // how fast must the animation move in ms?
-        ,   onMove:         null   // function that executes after every move.
         }
     ;
 
@@ -46,7 +45,6 @@
 
         ,   viewportSize    = 0
         ,   contentStyle    = {}
-        ,   slidesTotal     = 0
         ,   slidesVisible   = 0
         ,   slideSize       = 0
 
@@ -57,6 +55,7 @@
         ;
 
         this.slideCurrent = 0;
+        this.slidesTotal  = 0;
 
         function initialize()
         {
@@ -70,14 +69,14 @@
 
         this.update = function()
         {
-            $slides       = $overview.children();
-            viewportSize  = $viewport[0]["offset" + sizeLabel];
-            slideSize     = $slides.first()["outer" + sizeLabel](true);
-            slidesTotal   = $slides.length;
-            slideCurrent  = self.options.start || 0;
-            slidesVisible = Math.ceil(viewportSize / slideSize);
+            $slides          = $overview.children();
+            viewportSize     = $viewport[0]["offset" + sizeLabel];
+            slideSize        = $slides.first()["outer" + sizeLabel](true);
+            self.slidesTotal = $slides.length;
+            slideCurrent     = self.options.start || 0;
+            slidesVisible    = Math.ceil(viewportSize / slideSize);
 
-            $overview.css(sizeLabel.toLowerCase(), slideSize * slidesTotal);
+            $overview.css(sizeLabel.toLowerCase(), slideSize * self.slidesTotal);
         };
 
         function setEvents()
@@ -125,7 +124,7 @@
 
         this.move = function(slideIndex)
         {
-            self.slideCurrent = Math.max(0, Math.min(slideIndex || 0, slidesTotal - slidesVisible));
+            self.slideCurrent = Math.max(0, Math.min(slideIndex || 0, self.slidesTotal - slidesVisible));
 
             contentStyle[posiLabel] = -self.slideCurrent * slideSize;
 
@@ -136,10 +135,7 @@
                 ,   duration : this.options.animation ? this.options.animationTime : 0
                 ,   complete : function()
                     {
-                        if(self.options.onMove)
-                        {
-                            self.options.onMove.call(this, $slides[self.slideCurrent], self.slideCurrent);
-                        }
+                        $container.trigger("move", [$slides[self.slideCurrent], self.slideCurrent]);
                     }
             });
 
@@ -154,7 +150,7 @@
             if(self.options.buttons)
             {
                 $prev.toggleClass("disable", self.slideCurrent <= 0);
-                $next.toggleClass("disable", self.slideCurrent >= slidesTotal - slidesVisible);
+                $next.toggleClass("disable", self.slideCurrent >= self.slidesTotal - slidesVisible);
             }
 
             if(self.options.bullets)

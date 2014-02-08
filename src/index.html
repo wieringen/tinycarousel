@@ -79,13 +79,13 @@
                     <div class="block">
                         <h2>Features</h2>
                         <ul class="list">
+                            <li><strong>Completely rewritten!</strong></li>
                             <li>Can slide vertical or horizontal</li>
                             <li>AMD, Node, requirejs and commonjs support.</li>
                             <li>Supports navigation by button or paging</li>
                             <li>The point where the carousel starts can be set</li>
                             <li>Animation time can be set in milliseconds or to 'instant'</li>
-                            <li>Number of block to move at a time can be set</li>
-                            <li>A interval can be set to slide automaticaly every given milliseconds</li>
+                            <li>A interval can be set to slide automatically every given milliseconds</li>
                             <li>Easy customizable</li>
                             <li>Lightweight</li>
                             <li><a href="https://github.com/wieringen/tinycarousel">Source is on GitHub</a></li>
@@ -351,7 +351,7 @@ $(document).ready(function()
                         </script>
                     </div>
 
-                    <h2>Options</h2>
+                    <h2>Initialize options</h2>
                     <p>A list of all the available options and there default value</p>
                     <ul class="list">
                         <li><strong>start: 1</strong> -- where should the carousel start?</li>
@@ -365,15 +365,61 @@ $(document).ready(function()
                         <li><strong>onMove: null</strong> -- function that executes after every move </li>
                     </ul>
 
-                    <p>Below is a example of a callback. After every move the function is executed and it will return 2 things the current li and its index.</p>
+                    <h2>Properties</h2>
+
                     <pre class="prettyprint"><code>
-$('#slider-code').tinycarousel({
-    onMove : function(element, index)
-    {
-        console.log(element, index);
-    }
+$(document).ready(function()
+{
+    // You can access the methods and properties of your
+    // scrollbar instance straight after initialization.
+    //
+    $('#box').tinycarousel();
+
+    // This part you can do from whatever place in your
+    // code as long as the scrollbar allready is initialized.
+    //
+    var box = $('#box').data("plugin_tintcarousel)
+
+    // Now you have access to all the methods and properties.
+    //
+    // box.update()
+    // console.log(box.slideCurrent)
+    //
+    // etc..
 });
                     </code></pre>
+
+
+                    <ul class="list">
+                        <li><strong>slideCurrent</strong> -- The index of the slide where current on.</li>
+                        <li><strong>slidesTotal</strong> -- The number of slides the carousel is currently aware off.</li>
+                    </ul>
+
+                    <h2>Methods</h2>
+                    <ul class="list">
+                        <li><strong>update</strong> -- You can use this method to update the carousel if you added new slides on the fly.</li>
+                        <li><strong>start</strong> You can use this method to start the interval.</li>
+                        <li><strong>stop</strong> -- You can use this method to stop the interval.</li>
+                    </ul>
+
+                    <h2>Events</h2>
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    var $box = $('#box');
+    var box  = $box.tinycarousel();
+
+    $box.bind("move", function()
+    {
+        console.log("do something on every move to a new slide");
+    });
+});
+                    </code></pre>
+
+
+                    <ul class="list">
+                        <li><strong>move</strong> The move event will trigger when the carousel slides to a new slide.</li>
+                    </ul>
 
                 </div>
             </section>
