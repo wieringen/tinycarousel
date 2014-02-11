@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Tiny Carousel: Tiny Carousel is a lightweight jQuery carousel for sliding html based content.</title>
+        <title>Tiny Carousel: A lightweight jQuery carousel for sliding html based content.</title>
 
         <meta charset="utf-8">
         <meta name="robots" content="all" />
@@ -36,7 +36,7 @@
         <!-- Next files are only for this website! -->
         <script type="text/javascript" src="../node_modules/baijs/js/prettify.js"></script>
         <script type="text/javascript" src="../node_modules/baijs/js/website.js"></script>
-
+        <script type="text/javascript">window.google_analytics_uacct = "UA-4459599-4";</script>
     </head>
 
     <body>
@@ -72,7 +72,8 @@
                             <a class="addthis_button_twitter"></a>
                             <a class="addthis_button_delicious"></a>
                         </div>
-                        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4ce416993f847623"></script>
+                        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f90afd62b4f6ee"></script>
                         <!-- AddThis Button END -->
                     </div>
 
@@ -377,7 +378,7 @@ $(document).ready(function()
     // This part you can do from whatever place in your
     // code as long as the carousel allready is initialized.
     //
-    var box = $('#box').data("plugin_tinycarousel);
+    var box = $('#box').data("plugin_tinycarousel");
 
     // Now you have access to all the methods and properties.
     //
@@ -428,8 +429,9 @@ $(document).ready(function()
             <section id="col-right">
                 <ul class="block-menu">
                     <li><a href="/">Home</a></li>
-                    <li><a href="../tinycircleslider">Tiny Circleslider</a></li>
+                    <li><a href="../tinycarousel" class="active">Tiny Carousel</a></li>
                     <li><a href="../tinyscrollbar">Tiny Scrollbar</a></li>
+                    <li><a href="../tinycircleslider">Tiny Circleslider</a></li>
                 </ul>
 
                 <div class="block advert">
@@ -466,16 +468,16 @@ $(document).ready(function()
     <!-- CLOSE WRAPPER -->
 
 
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4459599-4']);
+        _gaq.push(['_trackPageview']);
 
-    <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        try {
-        var pageTracker = _gat._getTracker("UA-4459599-3");
-        pageTracker._trackPageview();
-        } catch(err) {}
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
     </script>
 </body>
 </html>
