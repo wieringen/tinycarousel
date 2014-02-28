@@ -60,7 +60,7 @@
         function initialize()
         {
             self.update();
-            self.move();
+            self.move(slideCurrent);
 
             setEvents();
 
