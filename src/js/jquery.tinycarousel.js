@@ -22,10 +22,11 @@
         ,   axis:           "x"    // vertical or horizontal scroller? ( x || y ).
         ,   buttons:        true   // show left and right navigation buttons.
         ,   bullets:        false  // is there a page number navigation present?
-        ,   interval:       false  // move to another block on intervals.
-        ,   intervalTime:   3000   // interval time in milliseconds.
+        ,   interval:       true  // move to another block on intervals.
+        ,   intervalTime:   2000   // interval time in milliseconds.
         ,   animation:      true   // false is instant, true is animate.
         ,   animationTime:  1000   // how fast must the animation move in ms?
+        ,   stepSize:       5
         }
     ;
 
@@ -57,6 +58,7 @@
         this.slideCurrent = 0;
         this.slidesTotal  = 0;
 
+        var running=true;
         function initialize()
         {
             self.update();
@@ -85,12 +87,14 @@
             {
                 $prev.click(function()
                 {
-                    return self.move(self.slideCurrent - 1);
+                    self.stop();
+                    return self.move(self.slideCurrent - self.options.stepSize);
                 });
 
                 $next.click(function()
                 {
-                    return self.move(self.slideCurrent + 1);
+                    self.stop();
+                    return self.move(self.slideCurrent + self.options.stepSize);
                 });
             }
 
@@ -105,13 +109,13 @@
 
         this.start = function()
         {
-            if(self.options.interval)
+            if(running)
             {
                 clearTimeout(intervalTimer);
 
                 intervalTimer = setTimeout(function()
                 {
-                    self.move(self.slideCurrent + 1);
+                    self.move(self.slideCurrent + self.options.stepSize);
 
                 }, this.options.intervalTime);
             }
@@ -119,13 +123,19 @@
 
         this.stop = function()
         {
+            running=false;
             clearTimeout(intervalTimer);
         };
 
         this.move = function(slideIndex)
         {
             self.slideCurrent = Math.max(0, Math.min(slideIndex || 0, self.slidesTotal - slidesVisible));
-
+            if(slideIndex> (self.slidesTotal - slidesVisible)){
+                self.slideCurrent=0;
+            }
+            if(slideIndex< 0){
+                self.slideCurrent=self.slidesTotal - slidesVisible;
+            }
             contentStyle[posiLabel] = -self.slideCurrent * slideSize;
 
             $overview.animate(
