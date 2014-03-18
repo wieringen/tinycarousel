@@ -79,7 +79,7 @@
             slideCurrent     = self.options.start || 0;
             slidesVisible    = Math.ceil(viewportSize / slideSize);
 
-            $overview.append($slides.slice(0, slidesVisible).clone())
+            $overview.append($slides.slice(0, slidesVisible).clone());
 
             $overview.css(sizeLabel.toLowerCase(), slideSize * (self.slidesTotal + slidesVisible));
         };
