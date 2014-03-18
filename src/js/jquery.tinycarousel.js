@@ -109,15 +109,17 @@
 
         this.start = function()
         {
-            if(running)
-            {
-                clearTimeout(intervalTimer);
-
-                intervalTimer = setTimeout(function()
+            if(self.options.interval){
+                if(running)
                 {
-                    self.move(self.slideCurrent + self.options.stepSize);
-
-                }, this.options.intervalTime);
+                    clearTimeout(intervalTimer);
+    
+                    intervalTimer = setTimeout(function()
+                    {
+                        self.move(self.slideCurrent + self.options.stepSize);
+    
+                    }, this.options.intervalTime);
+                }
             }
         };
 
