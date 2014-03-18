@@ -72,7 +72,6 @@
         this.update = function()
         {
             $slides          = $overview.children();
-
             viewportSize     = $viewport[0]["offset" + sizeLabel];
             slideSize        = $slides.first()["outer" + sizeLabel](true);
             self.slidesTotal = $slides.length;
@@ -80,8 +79,9 @@
             slidesVisible    = Math.ceil(viewportSize / slideSize);
 
             $overview.append($slides.slice(0, slidesVisible).clone());
-
             $overview.css(sizeLabel.toLowerCase(), slideSize * (self.slidesTotal + slidesVisible));
+
+            return self;
         };
 
         function setEvents()
@@ -90,12 +90,16 @@
             {
                 $prev.click(function()
                 {
-                    return self.move(slideIndex - 1);
+                    self.move(slideIndex - 1);
+
+                    return false;
                 });
 
                 $next.click(function()
                 {
-                    return self.move(slideIndex + 1);
+                    self.move(slideIndex + 1);
+
+                    return false;
                 });
             }
 
@@ -103,7 +107,9 @@
             {
                 $container.on("click", ".bullet", function()
                 {
-                    return self.move(slideIndex = +$(this).attr("data-slide"));
+                    self.move(slideIndex = +$(this).attr("data-slide"));
+
+                    return false;
                 });
             }
         }
@@ -118,13 +124,17 @@
                 {
                     self.move(slideIndex + 1);
 
-                }, this.options.intervalTime);
+                }, self.options.intervalTime);
             }
+
+            return self;
         };
 
         this.stop = function()
         {
             clearTimeout(intervalTimer);
+
+            return self;
         };
 
         this.move = function(index)
@@ -161,7 +171,7 @@
 
             self.start();
 
-            return false;
+            return self;
         };
 
         function setButtons()
