@@ -160,15 +160,14 @@
                 contentStyle
             ,   {
                     queue    : false
-                ,   duration : this.options.animation ? this.options.animationTime : 0
-                ,   always : function(q)
+                ,   duration : self.options.animation ? self.options.animationTime : 0
+                ,   always : function()
                     {
-                        setButtons();
-
                         $container.trigger("move", [$slides[self.slideCurrent], self.slideCurrent]);
                     }
             });
 
+            setButtons();
             self.start();
 
             return self;
