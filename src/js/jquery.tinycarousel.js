@@ -26,6 +26,7 @@
         ,   intervalTime:   3000   // interval time in milliseconds.
         ,   animation:      true   // false is instant, true is animate.
         ,   animationTime:  1000   // how fast must the animation move in ms?
+        ,   infinite:       true   // infinite carousel.
         }
     ;
 
@@ -47,6 +48,7 @@
         ,   contentStyle    = {}
         ,   slidesVisible   = 0
         ,   slideSize       = 0
+        ,   slideIndex      = 0
 
         ,   isHorizontal  = this.options.axis === 'x'
         ,   sizeLabel     = isHorizontal ? "Width" : "Height"
@@ -70,13 +72,16 @@
         this.update = function()
         {
             $slides          = $overview.children();
+
             viewportSize     = $viewport[0]["offset" + sizeLabel];
             slideSize        = $slides.first()["outer" + sizeLabel](true);
             self.slidesTotal = $slides.length;
             slideCurrent     = self.options.start || 0;
             slidesVisible    = Math.ceil(viewportSize / slideSize);
 
-            $overview.css(sizeLabel.toLowerCase(), slideSize * self.slidesTotal);
+            $overview.append($slides.slice(0, slidesVisible).clone())
+
+            $overview.css(sizeLabel.toLowerCase(), slideSize * (self.slidesTotal + slidesVisible));
         };
 
         function setEvents()
@@ -85,12 +90,12 @@
             {
                 $prev.click(function()
                 {
-                    return self.move(self.slideCurrent - 1);
+                    return self.move(slideIndex - 1);
                 });
 
                 $next.click(function()
                 {
-                    return self.move(self.slideCurrent + 1);
+                    return self.move(slideIndex + 1);
                 });
             }
 
@@ -98,7 +103,7 @@
             {
                 $container.on("click", ".bullet", function()
                 {
-                    return self.move(+$(this).attr("data-slide"));
+                    return self.move(slideIndex = +$(this).attr("data-slide"));
                 });
             }
         }
@@ -111,7 +116,7 @@
 
                 intervalTimer = setTimeout(function()
                 {
-                    self.move(self.slideCurrent + 1);
+                    self.move(slideIndex + 1);
 
                 }, this.options.intervalTime);
             }
@@ -122,24 +127,38 @@
             clearTimeout(intervalTimer);
         };
 
-        this.move = function(slideIndex)
+        this.move = function(index)
         {
-            self.slideCurrent = Math.max(0, Math.min(slideIndex || 0, self.slidesTotal - slidesVisible));
+            slideIndex        = index;
+            self.slideCurrent = slideIndex % self.slidesTotal;
 
-            contentStyle[posiLabel] = -self.slideCurrent * slideSize;
+            if(slideIndex < 0)
+            {
+                self.slideCurrent = slideIndex = self.slidesTotal - 1;
+                $overview.css(posiLabel, -(self.slidesTotal) * slideSize);
+            }
+
+            if(slideIndex > self.slidesTotal)
+            {
+                self.slideCurrent = slideIndex = 1;
+                $overview.css(posiLabel, 0);
+            }
+
+            contentStyle[posiLabel] = -slideIndex * slideSize;
 
             $overview.animate(
                 contentStyle
             ,   {
                     queue    : false
                 ,   duration : this.options.animation ? this.options.animationTime : 0
-                ,   complete : function()
+                ,   always : function(q)
                     {
+                        setButtons();
+
                         $container.trigger("move", [$slides[self.slideCurrent], self.slideCurrent]);
                     }
             });
 
-            setButtons();
             self.start();
 
             return false;
@@ -147,7 +166,7 @@
 
         function setButtons()
         {
-            if(self.options.buttons)
+            if(self.options.buttons && !self.options.infinite)
             {
                 $prev.toggleClass("disable", self.slideCurrent <= 0);
                 $next.toggleClass("disable", self.slideCurrent >= self.slidesTotal - slidesVisible);
