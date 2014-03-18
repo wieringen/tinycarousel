@@ -26,6 +26,7 @@
         ,   intervalTime:   3000   // interval time in milliseconds.
         ,   animation:      true   // false is instant, true is animate.
         ,   animationTime:  1000   // how fast must the animation move in ms?
+        ,   stepSize:       1
         }
     ;
 
@@ -85,12 +86,12 @@
             {
                 $prev.click(function()
                 {
-                    return self.move(self.slideCurrent - 1);
+                    return self.move(self.slideCurrent - self.options.stepSize);
                 });
 
                 $next.click(function()
                 {
-                    return self.move(self.slideCurrent + 1);
+                    return self.move(self.slideCurrent + self.options.stepSize);
                 });
             }
 
