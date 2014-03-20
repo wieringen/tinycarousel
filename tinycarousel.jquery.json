@@ -26,9 +26,9 @@
     }
   ],
   "bugs": "https://github.com/wieringen/tinycarousel/issues",
-  "download": "http://baijs.com/tinycarousel/"
-  "demo" : "http://baijs.com/tinycarousel/"
-  "docs" : "http://baijs.com/tinycarousel/"
+  "download": "http://baijs.com/tinycarousel/",
+  "demo" : "http://baijs.com/tinycarousel/",
+  "docs" : "http://baijs.com/tinycarousel/",
   "dependencies": {
     "jquery": ">=1.5"
   }
