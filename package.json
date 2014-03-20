@@ -1,8 +1,9 @@
 {
   "name": "tinycarousel",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A lightweight cross browser jQuery based infinite carousel",
   "homepage": "http://www.baijs.com/tinycarousel",
+  "main": "lib/jquery.tinycarousel.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/wieringen/tinycarousel.git"
