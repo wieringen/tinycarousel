@@ -2,11 +2,13 @@
 #slider1 {
     margin: 0 0 20px;
     overflow: hidden;
+    padding: 0 40px;
+    position: relative;
 }
 #slider1 .viewport {
     float: left;
-    width: 368px;
-    height: 125px;
+    width: 100%;
+    height: 123px;
     overflow: hidden;
     position: relative;
 }
@@ -14,11 +16,12 @@
     background: #C01313;
     border-radius: 35px;
     display: block;
-    margin: 30px 10px 0 0;
-    float: left;
+    margin: 30px 0 0;
     width: 35px;
     height: 35px;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -27,7 +30,10 @@
     font-size: 22px;
 }
 #slider1 .next {
-    margin: 30px 0 0 10px;
+    margin: 30px 0 0;
+    left: auto;
+    right: 0;
+    top: 0;
 }
 #slider1 .buttons:hover{
     color: #C01313;
@@ -46,7 +52,6 @@
     float: left;
     margin: 0 20px 0 0;
     overflow: hidden;
-    padding: 1px;
     height: 121px;
     border: 1px solid #dcdcdc;
     width: 104px;
@@ -133,7 +138,8 @@
     margin: 0 0 20px;
 }
 #slider4 .viewport {
-    width: 458px;
+    width: 100%;
+    max-width: 458px;
     height: 200px;
     overflow: hidden;
     position: relative;
@@ -177,7 +183,7 @@
 }
 
 /* slider5 */
-#slider5 { height: 1%; overflow:hidden; padding: 0 0 10px; margin: 0 0 0 50px;  }
+#slider5 { height: 1%; overflow:hidden; padding: 0 0 10px; width: 240px; margin: 0 auto; }
 #slider5 .viewport { width: 240px; height: 125px; overflow: hidden; position: relative; }
 #slider5 .buttons {
     background: #C01313;
