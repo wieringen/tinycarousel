@@ -1,5 +1,5 @@
 [tinycarousel](http://baijs.com/tinycarousel) [![Build Status](https://secure.travis-ci.org/wieringen/tinycarousel.png?branch=master)](http://travis-ci.org/wieringen/tinycarousel)
-==================================================
+===================================================
 
 What you need to build your own version of tinycarousel
 --------------------------------------
