@@ -1,5 +1,5 @@
 /* Tiny Carousel */
-#slider1 { height: 1%; overflow:hidden; padding: 0 0 10px; }
+#slider1 { height: 1%; overflow: hidden; padding: 0 0 10px; }
 #slider1 .viewport { float: left; width: 240px; height: 125px; overflow: hidden; position: relative; }
 #slider1 .buttons {
     background: #C01313;
