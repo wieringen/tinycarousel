@@ -10,7 +10,7 @@ In order to build tinycarousel, you need to have Node.js/npm, and git 1.7 or lat
 How to build your own tinycarousel
 ----------------------------
 
-First, clone a copy of the main imageCreator git repo by running:
+First, clone a copy of the main tinycarousel git repo by running:
 
 ```bash
 git clone git://github.com/wieringen/tinycarousel.git
