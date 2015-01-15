@@ -100,6 +100,13 @@ module.exports = ( grunt ) ->
 
                 ]
 
+        #  Run unit tests.
+        #
+        karma :
+            unit :
+                configFile : "test/conf/karma-dev.js"
+                runnerPort : 9998
+
         #  Make a zipfile from the dist and examples.
         #
         compress :
@@ -162,6 +169,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-compress"
     grunt.loadNpmTasks "grunt-ftp-deploy"
     grunt.loadNpmTasks "grunt-contrib-jshint"
+    grunt.loadNpmTasks "grunt-karma"
 
     #  Dist build
     #
