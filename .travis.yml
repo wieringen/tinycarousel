@@ -9,4 +9,4 @@ before_script:
 script:
 - grunt ci
 after_script:
-- cat ./dist/coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+- cat ./dist/reports/coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js

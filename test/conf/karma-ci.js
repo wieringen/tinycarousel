@@ -25,7 +25,7 @@ module.exports = function (config) {
     ciConfig.junitReporter = {
         outputFile: 'dist/reports/test-report.xml'
     };
-    ciConfig.coverageReporter.type = 'cobertura';
+    //ciConfig.coverageReporter.type = 'cobertura';
     ciConfig.logLevel = config.LOG_INFO;
     config.set(ciConfig);
 };

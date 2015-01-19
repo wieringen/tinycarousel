@@ -151,13 +151,10 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-karma"
     grunt.loadNpmTasks "grunt-processhtml"
 
-    #  Dist build
-    #
     grunt.registerTask(
-        "default"
+        "common"
         [
             "jshint"
-            "clean:dist"
             "copy:docs"
             "yuidoc"
             "uglify:dist"
@@ -169,18 +166,20 @@ module.exports = ( grunt ) ->
     )
 
     grunt.registerTask(
-        "dev"
+        "default"
         [
+            "clean:dist"
             "karma:dev"
-            "default"
+            "common"
         ]
     )
 
     grunt.registerTask(
         "ci"
         [
+            "clean:dist"
             "karma:ci"
-            "default"
+            "common"
         ]
     )
 
@@ -189,7 +188,6 @@ module.exports = ( grunt ) ->
     grunt.registerTask(
         "ftp"
         [
-            "karma:dist"
             "default"
             "ftp-deploy:docs"
             "ftp-deploy:examples"
