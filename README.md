@@ -1,4 +1,6 @@
-[tinycarousel](http://baijs.com/tinycarousel) [![Build Status](https://secure.travis-ci.org/wieringen/tinycarousel.png?branch=master)](http://travis-ci.org/wieringen/tinycarousel)
+[tinycarousel](http://baijs.com/tinycarousel)
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
+
 ==================================================
 
 What you need to build your own version of tinycarousel
@@ -48,4 +50,9 @@ Questions?
 
 If you have any questions, please feel free to email [me](mailto:wieringen@gmail.com).
 
+[travis-image]: https://travis-ci.org/wieringen/tinycarousel.svg?branch=master
+[travis-url]: https://travis-ci.org/wieringen/tinycarousel
+
+[coveralls-image]: https://img.shields.io/coveralls/wieringen/tinycarousel/master.svg
+[coveralls-url]: https://coveralls.io/r/wieringen/tinycarousel?branch=master
 
