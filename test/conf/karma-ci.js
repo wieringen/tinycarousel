@@ -3,10 +3,10 @@ var ciConfig = require('./karma-common.js');
 module.exports = function (config) {
     ciConfig.browsers = [
         'Firefox',
-        'Chrome',
-        'IE9 - Win7',
-        'IE10 - Win7',
-        'IE11 - Win7'
+        'Chrome'
+        //'IE9 - Win7',
+        //'IE10 - Win7',
+        //'IE11 - Win7'
     ];
     ciConfig.singleRun = true;
     ciConfig.reporters.push('junit');
