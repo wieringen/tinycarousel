@@ -1,8 +1,7 @@
-var configHelper = require('./karma-config-helper.js'),
-    debugConfig = require('./karma-common.js');
+var debugConfig = require('./karma-common.js');
 
 module.exports = function (config) {
-    debugConfig.browsers = configHelper.getBrowsers() || [
+    debugConfig.browsers = [
         'Chrome'
     ];
     debugConfig.logLevel = config.LOG_DEBUG;

@@ -3,3 +3,7 @@ node_js:
   - 0.10
 before_script:
   - npm install -g grunt-cli
+script:
+- grunt ci
+after_script:
+- cat ./dist/coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js

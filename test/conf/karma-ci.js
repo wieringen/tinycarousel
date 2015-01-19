@@ -1,8 +1,7 @@
-var configHelper = require('./karma-config-helper.js'),
-    ciConfig = require('./karma-common.js');
+var ciConfig = require('./karma-common.js');
 
 module.exports = function (config) {
-    ciConfig.browsers = configHelper.getBrowsers() || [
+    ciConfig.browsers = [
         'Firefox',
         'Chrome',
         'IE9 - Win7',
@@ -12,7 +11,7 @@ module.exports = function (config) {
     ciConfig.singleRun = true;
     ciConfig.reporters.push('junit');
     ciConfig.junitReporter = {
-        outputFile: 'target/test-reports/test-results.xml'
+        outputFile: 'dist/reports/test-report.xml'
     };
     ciConfig.coverageReporter.type = 'cobertura';
     ciConfig.logLevel = config.LOG_INFO;

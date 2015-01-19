@@ -1,52 +1,35 @@
-var configHelper = require('./karma-config-helper.js');
-
 module.exports = {
     // base path, that will be used to resolve files and exclude
     basePath: '../../',
 
     frameworks: [
       'mocha',
-      'chai-sinon'
+      'chai-sinon',
+      'jquery-1.8.3'
     ],
 
     client: {
       mocha: {
-        ui: 'tdd'
+        ui: 'bdd'
       }
     },
 
     // list of files / patterns to load in the browser
     files: [
-      // dependencies
-      // our code
-      'lib/hello.js',
-      // test dependencies
-      'test/lib/fixture-helper.js',
-      //tests
-      {
-        pattern: [
-          'test',
-          configHelper.getEnvVar('KARMA_TEST_TYPE') || '**',
-          '*Spec.js'
-        ].join('/'),
-        served: true,
-        included: true,
-        watched: true
-      },
-      // fixtures
-      {
-        pattern: 'test/fixtures/**/*.html',
-        included: true
-      }
+
+        'lib/jquery.tinycarousel.js',
+        'test/unit/jquery.tinycarousel.spec.js',
+        {
+            pattern: 'test/fixtures/**/*.html',
+            included: true
+        }
     ],
 
     // list of files to exclude
     exclude: [],
 
     preprocessors: {
-      'lib/*.js': [
-        'coverage'
-      ],
+      'lib/*.js': ['coverage'],
       'test/fixtures/**/*.html': ['html2js']
     },
 
@@ -60,12 +43,12 @@ module.exports = {
     ],
 
     coverageReporter: {
-        type: 'html',
-        dir: 'target/test-reports/coverage/'
+        type: 'lcov',
+        dir: 'dist/reports/coverage/'
     },
 
     htmlReporter: {
-      outputFile: 'target/test-reports/html/test-report.html'
+      outputFile: 'dist/reports/test-report.html'
     },
 
     // web server port
@@ -83,7 +66,7 @@ module.exports = {
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     // CLI --log-level debug
-//    logLevel: config.LOG_ERROR,
+    // logLevel: config.LOG_ERROR,
 
     // enable / disable watching file and executing tests whenever any file changes
     // CLI --auto-watch --no-auto-watch
@@ -109,16 +92,17 @@ module.exports = {
 
     // Auto run tests on start (when browsers are captured) and exit
     // CLI --single-run --no-single-run
-    singleRun: true,
+    singleRun: false,
 
     // report which specs are slower than 500ms
     // CLI --report-slower-than 500
     reportSlowerThan: 500,
 
-//    proxies: {}
+    //proxies: {}
 
     plugins: [
       'karma-mocha',
+      'karma-jquery',
       'karma-chai-sinon',
       'karma-ie-launcher',
       'karma-chrome-launcher',

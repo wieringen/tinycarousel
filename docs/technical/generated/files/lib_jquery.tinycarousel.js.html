@@ -1,27 +1,31 @@
+<h1 class="file-heading">File: lib/jquery.tinycarousel.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
 ;(function(factory) {
-    if(typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+    if(typeof define === &#x27;function&#x27; &amp;&amp; define.amd) {
+        define([&#x27;jquery&#x27;], factory);
     }
-    else if(typeof exports === 'object') {
-        module.exports = factory(require("jquery"));
+    else if(typeof exports === &#x27;object&#x27;) {
+        module.exports = factory(require(&quot;jquery&quot;));
     }
     else {
         factory(jQuery);
     }
 }
 (function($) {
-    var pluginName = "tinycarousel"
+    var pluginName = &quot;tinycarousel&quot;
     ,   defaults   =
         {
-            start: 0
-        ,   axis: "x"
-        ,   buttons: true
-        ,   bullets: false
-        ,   interval: false
-        ,   intervalTime: 3000
-        ,   animation: true
-        ,   animationTime: 1000
-        ,   infinite: true
+            start:          0
+        ,   axis:           &quot;x&quot;
+        ,   buttons:        true
+        ,   bullets:        false
+        ,   interval:       false
+        ,   intervalTime:   3000
+        ,   animation:      true
+        ,   animationTime:  1000
+        ,   infinite:       true
         }
     ;
 
@@ -48,27 +52,27 @@
          * @type String
          * @private
          * @final
-         * @default 'tinycarousel'
+         * @default &#x27;tinycarousel&#x27;
          */
         this._name = pluginName;
 
-        var self = this
-        ,   $viewport = $container.find(".viewport:first")
-        ,   $overview = $container.find(".overview:first")
-        ,   $slides = null
-        ,   $next = $container.find(".next:first")
-        ,   $prev = $container.find(".prev:first")
-        ,   $bullets = $container.find(".bullet")
+        var self      = this
+        ,   $viewport = $container.find(&quot;.viewport:first&quot;)
+        ,   $overview = $container.find(&quot;.overview:first&quot;)
+        ,   $slides   = null
+        ,   $next     = $container.find(&quot;.next:first&quot;)
+        ,   $prev     = $container.find(&quot;.prev:first&quot;)
+        ,   $bullets  = $container.find(&quot;.bullet&quot;)
 
-        ,   viewportSize = 0
-        ,   contentStyle = {}
-        ,   slidesVisible = 0
-        ,   slideSize = 0
-        ,   slideIndex = 0
+        ,   viewportSize    = 0
+        ,   contentStyle    = {}
+        ,   slidesVisible   = 0
+        ,   slideSize       = 0
+        ,   slideIndex      = 0
 
-        ,   isHorizontal = this.options.axis === 'x'
-        ,   sizeLabel = isHorizontal ? "Width" : "Height"
-        ,   posiLabel = isHorizontal ? "left" : "top"
+        ,   isHorizontal  = this.options.axis === &#x27;x&#x27;
+        ,   sizeLabel     = isHorizontal ? &quot;Width&quot; : &quot;Height&quot;
+        ,   posiLabel     = isHorizontal ? &quot;left&quot; : &quot;top&quot;
         ,   intervalTimer = null
         ;
 
@@ -120,16 +124,16 @@
          * @chainable
          */
         this.update = function() {
-            $overview.find(".mirrored").remove();
+            $overview.find(&quot;.mirrored&quot;).remove();
 
-            $slides = $overview.children();
-            viewportSize = $viewport[0]["offset" + sizeLabel];
-            slideSize = $slides.first()["outer" + sizeLabel](true);
-            self.slidesTotal = $slides.length;
+            $slides           = $overview.children();
+            viewportSize      = $viewport[0][&quot;offset&quot; + sizeLabel];
+            slideSize         = $slides.first()[&quot;outer&quot; + sizeLabel](true);
+            self.slidesTotal  = $slides.length;
             self.slideCurrent = self.options.start || 0;
-            slidesVisible = Math.ceil(viewportSize / slideSize);
+            slidesVisible     = Math.ceil(viewportSize / slideSize);
 
-            $overview.append($slides.slice(0, slidesVisible).clone().addClass("mirrored"));
+            $overview.append($slides.slice(0, slidesVisible).clone().addClass(&quot;mirrored&quot;));
             $overview.css(sizeLabel.toLowerCase(), slideSize * (self.slidesTotal + slidesVisible));
 
             _setButtons();
@@ -159,8 +163,8 @@
             $(window).resize(self.update);
 
             if(self.options.bullets) {
-                $container.on("click", ".bullet", function() {
-                    self.move(slideIndex = +$(this).attr("data-slide"));
+                $container.on(&quot;click&quot;, &quot;.bullet&quot;, function() {
+                    self.move(slideIndex = +$(this).attr(&quot;data-slide&quot;));
 
                     return false;
                 });
@@ -210,15 +214,15 @@
          * @chainable
          */
         this.move = function(index) {
-            slideIndex = index || self.slideCurrent;
+            slideIndex        = index || self.slideCurrent;
             self.slideCurrent = slideIndex % self.slidesTotal;
 
-            if(slideIndex < 0) {
+            if(slideIndex &lt; 0) {
                 self.slideCurrent = slideIndex = self.slidesTotal - 1;
                 $overview.css(posiLabel, -(self.slidesTotal) * slideSize);
             }
 
-            if(slideIndex > self.slidesTotal) {
+            if(slideIndex &gt; self.slidesTotal) {
                 self.slideCurrent = slideIndex = 1;
                 $overview.css(posiLabel, 0);
             }
@@ -228,7 +232,7 @@
             $overview.animate(
                 contentStyle
             ,   {
-                    queue : false
+                    queue    : false
                 ,   duration : self.options.animation ? self.options.animationTime : 0
                 ,   always : function() {
                        /**
@@ -236,7 +240,7 @@
                         *
                         * @event move
                         */
-                        $container.trigger("move", [$slides[self.slideCurrent], self.slideCurrent]);
+                        $container.trigger(&quot;move&quot;, [$slides[self.slideCurrent], self.slideCurrent]);
                     }
                 });
 
@@ -251,14 +255,14 @@
          * @private
          */
         function _setButtons() {
-            if(self.options.buttons && !self.options.infinite) {
-                $prev.toggleClass("disable", self.slideCurrent <= 0);
-                $next.toggleClass("disable", self.slideCurrent >= self.slidesTotal - slidesVisible);
+            if(self.options.buttons &amp;&amp; !self.options.infinite) {
+                $prev.toggleClass(&quot;disable&quot;, self.slideCurrent &lt;= 0);
+                $next.toggleClass(&quot;disable&quot;, self.slideCurrent &gt;= self.slidesTotal - slidesVisible);
             }
 
             if(self.options.bullets) {
-                $bullets.removeClass("active");
-                $($bullets[self.slideCurrent]).addClass("active");
+                $bullets.removeClass(&quot;active&quot;);
+                $($bullets[self.slideCurrent]).addClass(&quot;active&quot;);
             }
         }
 
@@ -281,9 +285,11 @@
     */
     $.fn[pluginName] = function(options) {
         return this.each(function() {
-            if(!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new Plugin($(this), options));
+            if(!$.data(this, &quot;plugin_&quot; + pluginName)) {
+                $.data(this, &quot;plugin_&quot; + pluginName, new Plugin($(this), options));
             }
         });
     };
 }));
+    </pre>
+</div>
