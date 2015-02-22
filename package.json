@@ -1,6 +1,6 @@
 {
   "name": "tinycarousel",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "A lightweight cross browser jQuery based infinite carousel",
   "homepage": "https://baijs.com/tinycarousel",
   "main": "lib/jquery.tinycarousel.js",
