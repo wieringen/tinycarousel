@@ -9,48 +9,55 @@
         <meta name="description" content="Tiny Carousel is a lightweight infinite jQuery carousel for sliding html based content." />
         <meta name="keywords" content="lightweight, jQuery, infinite, responsive, plugin, carousel, javascript, tinycarousel, Tiny Carousel, web 2.0" />
         <meta name="author" content="Maarten baijs" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
 
-        <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel='stylesheet' type='text/css'>
+        <link href="//fonts.googleapis.com/css?family=PT+Sans" rel='stylesheet' type='text/css'>
+        <!-- build:[href] css/ -->
         <link rel="stylesheet" href="../node_modules/baijs/css/website.css" type="text/css" media="screen"/>
+        <!-- /build -->
         <link rel="stylesheet" href="css/tinycarousel.css" type="text/css" media="screen"/>
 
         <!--[if lte IE 8]>
             <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
         <![endif]-->
 
+        <!-- build:[href] css/ -->
         <!--[if lte IE 7]>
             <link rel="stylesheet" href="../node_modules/baijs/css/website_ie.css" type="text/css" media="screen"/>
         <![endif]-->
+        <!-- /build -->
 
         <!--[if lte IE 5]>
             <script type="text/javascript"> function handleError() { return true; } window.onerror = handleError; </script>
         <![endif]-->
 
-        <!-- Add jQuery library -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-        <!-- Add tinycarousel JS -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+        <!-- build:[src] js/ -->
         <script type="text/javascript" src="../lib/jquery.tinycarousel.js"></script>
+        <!-- /build -->
 
         <!-- Next files are only for this website! -->
+        <!-- build:[src] js/ -->
         <script type="text/javascript" src="../node_modules/baijs/js/prettify.js"></script>
         <script type="text/javascript" src="../node_modules/baijs/js/website.js"></script>
+        <!-- /build -->
         <script type="text/javascript">window.google_analytics_uacct = "UA-4459599-4";</script>
     </head>
 
     <body>
 
     <div id="wrapper">
-
         <header id="header">
             <h1>Tiny Carousel</h1>
             <span class="slogan">A lightweight jQuery infinite carousel for sliding html based content.</span>
 
-            <a href="tinycarousel-@@bnr@@.zip" class="btn-download">Download v@@bnr@@</a>
+           <section class="download">
+                <a href="tinycarousel-<%= version %>.zip" class="btn">Download v<%= version %></a>
+                <p>The latest source is available on <a href="https://github.com/wieringen/tinycarousel">GitHub</a>.</p>
+            </section>
         </header>
 
-        <nav id="menu">
+        <nav id="menu-primary" class="menu">
             <ul class="block-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="../tinycarousel" class="active">Tiny Carousel</a></li>
@@ -367,33 +374,21 @@ $(document).ready(function()
             </section>
 
             <section class="block">
-                <h2>Initialize options</h2>
-                <p>A list of all the available options and there default value</p>
-                <ul class="list">
-                    <li><strong>start: 1</strong> -- where should the carousel start?</li>
-                    <li><strong>axis: 'x'</strong> -- vertical or horizontal scroller? 'x' or 'y' .</li>
-                    <li><strong>buttons: true</strong> -- show left and right navigation buttons?</li>
-                    <li><strong>bullets: false </strong> -- is there a page number navigation present?</li>
-                    <li><strong>interval: false</strong> -- move to the next block on interval.</li>
-                    <li><strong>intervalTime: 3000 </strong> -- interval time in milliseconds.</li>
-                    <li><strong>animation: true</strong> -- false is instant, true is animate.</li>
-                    <li><strong>animationTime: 1000</strong> -- how fast must the animation move in milliseconds?</li>
-                    <li><strong>infinite: true</strong> -- infinite carousel.</li>
-                </ul>
+                <!-- build:include ../../docs/technical/generated/classes/tinycarousel.html -->
+                <p>The generated API docs will be included here.</p>
+                <!-- /build -->
+            </section>
 
-
-                <h2>Properties</h2>
-
+            <section class="block">
+                <h2>Usage</h2>
                 <pre class="prettyprint"><code>
 $(document).ready(function()
 {
-    // You can access the methods and properties of your
-    // carousel instance straight after initialization.
+    // Initialize a carousel like this.
     //
     $('#box').tinycarousel();
 
-    // This part you can do from whatever place in your
-    // code as long as the carousel allready is initialized.
+    // Try this to get access to the actual carousel instance.
     //
     var box = $('#box').data("plugin_tinycarousel");
 
@@ -403,29 +398,9 @@ $(document).ready(function()
     // console.log(box.slideCurrent);
     //
     // etc..
-});
-                </code></pre>
 
-                <ul class="list">
-                    <li><strong>slideCurrent</strong> -- The index of the current slide.</li>
-                    <li><strong>slidesTotal</strong> -- The number of slides the carousel is currently aware off.</li>
-                </ul>
-
-                <h2>Methods</h2>
-                <ul class="list">
-                    <li><strong>update</strong> -- You can use this method to update the carousel if you added new slides on the fly.</li>
-                    <li><strong>start</strong> Start the interval.</li>
-                    <li><strong>stop</strong> -- Stop the interval.</li>
-                    <li><strong>move</strong> -- Move to specific slide. The only argument you can supply is the index of the slide.</li>
-                </ul>
-
-                <h2>Events</h2>
-                <pre class="prettyprint"><code>
-$(document).ready(function()
-{
-    var $box = $('#box');
-    var box  = $box.tinycarousel();
-
+    // You can bind to the move event like this.
+    //
     $box.bind("move", function()
     {
         console.log("do something on every move to a new slide");
@@ -433,9 +408,6 @@ $(document).ready(function()
 });
                 </code></pre>
 
-                <ul class="list">
-                    <li><strong>move</strong> -- The move event will trigger when the carousel slides to a new slide.</li>
-                </ul>
             </section>
         </article>
 
@@ -450,7 +422,7 @@ $(document).ready(function()
             </section>
 
             <section class="block">
-                <h2>License / Source</h2>
+                <h2>License</h2>
 
                 <p>Tinycarousel is a free script its licensed under the MIT license. However a donation for my labor of love is greatly appreciated :) </p>
                 <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="beer">
@@ -459,7 +431,6 @@ $(document).ready(function()
                     <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
                     <img alt="" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
                 </form></p>
-                <p>The latest source is available on <a href="https://github.com/wieringen/tinycarousel">GitHub</a>.</p>
             </section>
 
             <section class="block">

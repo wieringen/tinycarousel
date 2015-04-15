@@ -1,5 +1,5 @@
-[tinycarousel](http://baijs.com/tinycarousel) [![Build Status](https://secure.travis-ci.org/wieringen/tinycarousel.png?branch=master)](http://travis-ci.org/wieringen/tinycarousel)
-===================================================
+[tinycarousel](http://baijs.com/tinycarousel) [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM version][npm-image]][npm-url]
+==================================================
 
 What you need to build your own version of tinycarousel
 --------------------------------------
@@ -10,7 +10,7 @@ In order to build tinycarousel, you need to have Node.js/npm, and git 1.7 or lat
 How to build your own tinycarousel
 ----------------------------
 
-First, clone a copy of the main imageCreator git repo by running:
+First, clone a copy of the main tinycarousel git repo by running:
 
 ```bash
 git clone git://github.com/wieringen/tinycarousel.git
@@ -48,4 +48,12 @@ Questions?
 
 If you have any questions, please feel free to email [me](mailto:wieringen@gmail.com).
 
+[travis-image]: https://travis-ci.org/wieringen/tinycarousel.svg?branch=master
+[travis-url]: https://travis-ci.org/wieringen/tinycarousel
 
+[coveralls-image]: https://img.shields.io/coveralls/wieringen/tinycarousel/master.svg
+[coveralls-url]: https://coveralls.io/r/wieringen/tinycarousel?branch=master
+
+[npm-image]: https://badge.fury.io/js/tinycarousel.png
+[npm-url]: http://badge.fury.io/js/tinycarousel
+199.27.75.133

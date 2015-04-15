@@ -45,7 +45,7 @@
 #slider1 .overview {
     list-style: none;
     position: absolute;
-    left: 0
+    left: 0;
     top: 0;
 }
 #slider1 .overview li{
