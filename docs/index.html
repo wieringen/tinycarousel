@@ -386,11 +386,12 @@ $(document).ready(function()
 {
     // Initialize a carousel like this.
     //
-    $('#box').tinycarousel();
+    var $box = $('#box');
+    $box.tinycarousel();
 
     // Try this to get access to the actual carousel instance.
     //
-    var box = $('#box').data("plugin_tinycarousel");
+    var box = $box.data("plugin_tinycarousel");
 
     // Now you have access to all the methods and properties.
     //
